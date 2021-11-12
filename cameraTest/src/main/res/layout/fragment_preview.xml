@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        
+        <variable
+            name="viewModel"
+            type="com.zappyware.cameratest.CameraViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CameraActivity">
+
+        <ImageView
+            android:id="@+id/previewImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:bitmapFile="@{viewModel.currentPhotoFile}"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/camera_capture_button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:scaleType="fitCenter"
+            android:elevation="2dp"
+            android:text="@string/btn_close_preview"
+            android:onClick="@{() -> viewModel.navigateBack()}"/>
+
+    </FrameLayout>
+
+</layout>

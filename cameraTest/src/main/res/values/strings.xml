@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="module_name">CameraTest</string>
+    
+    <string name="btn_take_picture">Take picture</string>
+    <string name="btn_close_preview">Close preview</string>
+
+</resources>
